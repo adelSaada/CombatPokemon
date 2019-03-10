@@ -21,8 +21,8 @@ public class BlocPokemon extends JPanel {
 		
 		imagePk = new JLabel(new ImageIcon(adresseImage));
 		
-		bloc.setBackground(Color.WHITE);
 		bloc.setLayout(new BorderLayout());
+		bloc.setBackground(Color.WHITE);
 		if(ordreAjout) {
 			bloc.add(contenerPv, BorderLayout.WEST);
 			bloc.add(imagePk, BorderLayout.EAST);
@@ -32,6 +32,7 @@ public class BlocPokemon extends JPanel {
 			bloc.add(contenerPv,BorderLayout.EAST);
 		}
 		
+		setBackground(Color.WHITE);
 		add(bloc);
 	}
 

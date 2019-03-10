@@ -44,8 +44,10 @@ public class FenetrePv extends JPanel {
 		contenerLvl.add(texteLvl);
 		contenerLvl.add(level);
 		contenerLvl.setBackground(Color.WHITE);
+		
 		level.setFont(new Font("Impact", Font.PLAIN, 20));
 		level.setText(lvl);
+		level.setBackground(Color.WHITE);
 		
 		blocLabelPv.setLayout(new BoxLayout(blocLabelPv,BoxLayout.Y_AXIS));
 		blocLabelPv.add(nomPk);
@@ -57,7 +59,7 @@ public class FenetrePv extends JPanel {
 		nomPk.setFont(new Font("Impact", Font.PLAIN, 20));
 		nomPk.setAlignmentX(CENTER_ALIGNMENT);
 		
-		
+		setBackground(Color.WHITE);
 		add(blocLabelPv);
 	}
 	
