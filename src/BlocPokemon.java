@@ -9,7 +9,7 @@ public class BlocPokemon extends JPanel {
 
 	private JPanel bloc = new JPanel(); 
 
-	private JLabel imagePk = new JLabel(new ImageIcon("evoli2.png"));
+	private JLabel imagePk = new JLabel(new ImageIcon("images/evoli2.png"));
 
 	/**
 	 * 

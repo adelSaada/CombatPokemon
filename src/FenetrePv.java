@@ -21,13 +21,13 @@ public class FenetrePv extends JPanel {
 	
 	/* Contener des lvl */
 	private JPanel contenerLvl = new JPanel();
-	private JLabel texteLvl = new JLabel(new ImageIcon("imageLvl.png"));
+	private JLabel texteLvl = new JLabel(new ImageIcon("images/imageLvl.png"));
 	private JLabel level = new JLabel("5");
 	
 	/* Contener des PV */
 	private JPanel contenerPv = new JPanel();
-	private JLabel texteHp = new JLabel(new ImageIcon("imageHp.png"));
-	private JLabel imagePv = new JLabel(new ImageIcon("pv100.png"), SwingConstants.LEFT);
+	private JLabel texteHp = new JLabel(new ImageIcon("images/imageHp.png"));
+	private JLabel imagePv = new JLabel(new ImageIcon("images/pv100.png"), SwingConstants.LEFT);
 
 	
 	public FenetrePv() {

@@ -32,8 +32,8 @@ public class FenetrePokemon extends JFrame {
 	private JPanel contenuEtiquette = new JPanel(new GridLayout(6,1));
 	
 	/* les etiquettes Pokémons */
-	private EtiquettePokemon etiquettePk1 = new EtiquettePokemon(contenerPvAmi,"pikachu2.gif");
-	private EtiquettePokemon etiquettePk2 = new EtiquettePokemon(contenerPvEnnemi,"evoli.png");
+	private EtiquettePokemon etiquettePk1 = new EtiquettePokemon(contenerPvAmi,"images/pikachu2.gif");
+	private EtiquettePokemon etiquettePk2 = new EtiquettePokemon(contenerPvEnnemi,"images/evoli.png");
 	
 	private JPanel contener = new JPanel();
 	
@@ -43,8 +43,8 @@ public class FenetrePokemon extends JFrame {
 	
 	private JLabel texteMenu = new JLabel("Que doit faire Pikachu ?");
 
-	private BlocPokemon blocAdversaire = new BlocPokemon(contenerPvEnnemi,"evoli2.png",true);
-	private BlocPokemon blocAmi = new BlocPokemon(contenerPvAmi,"pikachuBack.png",false);
+	private BlocPokemon blocAdversaire = new BlocPokemon(contenerPvEnnemi,"images/evoli2.png",true);
+	private BlocPokemon blocAmi = new BlocPokemon(contenerPvAmi,"images/pikachuBack.png",false);
 	
 	private JButton boutonRetour = new JButton("Retour");
 	
@@ -169,7 +169,7 @@ public class FenetrePokemon extends JFrame {
 				barreDeMenu.add(texteMenu);
 				texteMenu.setForeground(Color.BLACK);
 				texteMenu.setText(contenerPvAmi.getNomPk()+ " lance attaque "+ e.getActionCommand());
-				blocAdversaire.setImagePk("evoli2Blessure.png");
+				blocAdversaire.setImagePk("images/evoli2Blessure.png");
 				
 				if(e.getActionCommand().equalsIgnoreCase("fatal-foudre")) {
 					compteurNbrAtqEnnemi += 10;
@@ -192,7 +192,7 @@ public class FenetrePokemon extends JFrame {
 				
 				//texteMenu.setText("C'est très efficace ...");
 				
-				blocAdversaire.setImagePk("evoli2.png");
+				blocAdversaire.setImagePk("images/evoli2.png");
 				barreDeMenu.revalidate();
 				barreDeMenu.repaint();	
 				
@@ -233,7 +233,7 @@ public class FenetrePokemon extends JFrame {
 		else {
 			texteMenu.setText(contenerPvEnnemi.getNomPk()+ " lance Vive-Attaque");			
 			compteurNbrAtqAmi += 2;
-			blocAmi.setImagePk("pikachuBackBlessure.png");
+			blocAmi.setImagePk("images/pikachuBackBlessure.png");
 			attaque(compteurNbrAtqAmi, contenerPvAmi);
 		}
 		barreDeMenu.revalidate();
@@ -245,7 +245,7 @@ public class FenetrePokemon extends JFrame {
 			e1.printStackTrace();
 		}
 		barreDeMenu.removeAll();
-		blocAmi.setImagePk("pikachuBack.png");
+		blocAmi.setImagePk("images/pikachuBack.png");
 
 		texteMenu.setText("Que doit faire Pikachu ?");
 		barreDeMenu.add(texteMenu);
@@ -271,107 +271,107 @@ public class FenetrePokemon extends JFrame {
 		switch(nombreAttaque) {
 		
 		case 1 :
-			contenerPv.setImgPv("pv100.png");	
+			contenerPv.setImgPv("images/pv100.png");	
 			break;
 		case 2 :
-			contenerPv.setImgPv("pv98.png");	
+			contenerPv.setImgPv("images/pv98.png");	
 			break;
 		case 3 :
-			contenerPv.setImgPv("pv96.png");	
+			contenerPv.setImgPv("images/pv96.png");	
 			break;
 		case 4 :
-			contenerPv.setImgPv("pv92.png");	
+			contenerPv.setImgPv("images/pv92.png");	
 			break;
 		case 5 :
-			contenerPv.setImgPv("pv90.png");	
+			contenerPv.setImgPv("images/pv90.png");	
 			break;
 		case 6 :
-			contenerPv.setImgPv("pv88.png");
+			contenerPv.setImgPv("images/pv88.png");
 			break;
 		case 7 :
-			contenerPv.setImgPv("pv85.png");
+			contenerPv.setImgPv("images/pv85.png");
 			break;
 		case 8 :
-			contenerPv.setImgPv("pv80.png");	
+			contenerPv.setImgPv("images/pv80.png");	
 			break;
 		case 9 :
-			contenerPv.setImgPv("pv75.png");	
+			contenerPv.setImgPv("images/pv75.png");	
 			break;
 		case 10 :
-			contenerPv.setImgPv("pv70.png");	
+			contenerPv.setImgPv("images/pv70.png");	
 			break;
 		case 11 :
-			contenerPv.setImgPv("pv65.png");	
+			contenerPv.setImgPv("images/pv65.png");	
 			break;
 			
 		case 12 :
-			contenerPv.setImgPv("pv63.png");	
+			contenerPv.setImgPv("images/pv63.png");	
 			break;
 		case 13 :
-			contenerPv.setImgPv("pv60.png");	
+			contenerPv.setImgPv("images/pv60.png");	
 			break;
 		case 14 :
-			contenerPv.setImgPv("pv55.png");	
+			contenerPv.setImgPv("images/pv55.png");	
 			break;
 		case 15 :
-			contenerPv.setImgPv("pv50.png");	
+			contenerPv.setImgPv("images/pv50.png");	
 			break;
 		case 16 :
-			contenerPv.setImgPv("pv45.png");	
+			contenerPv.setImgPv("images/pv45.png");	
 			break;
 		case 17 :
-			contenerPv.setImgPv("pv40.png");
+			contenerPv.setImgPv("images/pv40.png");
 			break;
 		case 18 :
-			contenerPv.setImgPv("pv35.png");
+			contenerPv.setImgPv("images/pv35.png");
 			break;
 		case 19 :
-			contenerPv.setImgPv("pv30.png");	
+			contenerPv.setImgPv("images/pv30.png");	
 			break;
 		case 20 :
-			contenerPv.setImgPv("pv25.png");	
+			contenerPv.setImgPv("images/pv25.png");	
 			break;
 		case 21 :
-			contenerPv.setImgPv("pv20.png");
+			contenerPv.setImgPv("images/pv20.png");
 			break;
 		case 22 :
-			contenerPv.setImgPv("pv18.png");
+			contenerPv.setImgPv("images/pv18.png");
 			break;
 		case 23 :
-			contenerPv.setImgPv("pv16.png");	
+			contenerPv.setImgPv("images/pv16.png");	
 			break;
 		case 24 :
-			contenerPv.setImgPv("pv13.png");
+			contenerPv.setImgPv("images/pv13.png");
 			break;
 		case 25 :
-			contenerPv.setImgPv("pv10.png");	
+			contenerPv.setImgPv("images/pv10.png");	
 			break;		
 		case 26 :
-			contenerPv.setImgPv("pv9.png");	
+			contenerPv.setImgPv("images/pv9.png");	
 			break;
 		case 27 :
-			contenerPv.setImgPv("pv8.png");	
+			contenerPv.setImgPv("images/pv8.png");	
 			break;
 		case 28 :
-			contenerPv.setImgPv("pv7.png");	
+			contenerPv.setImgPv("images/pv7.png");	
 			break;
 		case 29 :
-			contenerPv.setImgPv("pv6.png");	
+			contenerPv.setImgPv("images/pv6.png");	
 			break;
 		case 30 :
-			contenerPv.setImgPv("pv5.png");	
+			contenerPv.setImgPv("images/pv5.png");	
 			break;
 		case 31 :
-			contenerPv.setImgPv("pv4.png");
+			contenerPv.setImgPv("images/pv4.png");
 			break;
 		case 32 :
-			contenerPv.setImgPv("pv3.png");
+			contenerPv.setImgPv("images/pv3.png");
 			break;
 		case 33 :
-			contenerPv.setImgPv("pv2.png");	
+			contenerPv.setImgPv("images/pv2.png");	
 			break;
 		case 34 :
-			contenerPv.setImgPv("pv0.png");	
+			contenerPv.setImgPv("images/pv0.png");	
 		default :
 			mort = true;
 			blocAdversaire.removeAll();

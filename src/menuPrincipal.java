@@ -14,10 +14,10 @@ public class menuPrincipal extends JPanel {
 	
 	/* Les boutons constituant le menu */
 	
-	private JButton boutonFightMenu = new JButton(new ImageIcon("fightMenu.gif"));
-	private JButton boutonBagMenu = new JButton(new ImageIcon("bagMenu.gif"));
-	private JButton boutonPkmMenu = new JButton(new ImageIcon("pokemonMenu.gif"));
-	private JButton boutonRunMenu = new JButton(new ImageIcon("runMenu.png"));
+	private JButton boutonFightMenu = new JButton(new ImageIcon("images/fightMenu.gif"));
+	private JButton boutonBagMenu = new JButton(new ImageIcon("images/bagMenu.gif"));
+	private JButton boutonPkmMenu = new JButton(new ImageIcon("images/pokemonMenu.gif"));
+	private JButton boutonRunMenu = new JButton(new ImageIcon("images/runMenu.png"));
 	
 	
 	public menuPrincipal() {
