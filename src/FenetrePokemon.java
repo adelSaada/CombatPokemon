@@ -25,9 +25,8 @@ public class FenetrePokemon extends JFrame {
 	private static final int MAX=34;
 	
 	private List<String> listeImagePv = Arrays.asList("pv100","pv98","pv96","pv92","pv90","pv88","pv85",
-			"pv80","pv75","pv70","pv65","pv63","pv60","pv55","pv50","pv45","pv40","pv35","pv30",
-			"pv25","pv20","pv18","pv16","pv13","pv10","pv9","pv8","pv7","pv6","pv5","pv4","pv3",
-			"pv2","pv0");
+			"pv80","pv75","pv70","pv65","pv63","pv60","pv55","pv50","pv45","pv40","pv35","pv30","pv25",
+			"pv20","pv18","pv16","pv13","pv10","pv9","pv8","pv7","pv6","pv5","pv4","pv3","pv2","pv0");
 
 	private Set<EtiquettePokemon> listeEtiqPkm = new HashSet<>();
 	
@@ -70,11 +69,12 @@ public class FenetrePokemon extends JFrame {
 		barreDeMenu.setBorder(BorderFactory.createLineBorder(Color.black));
 		barreDeMenu.setPreferredSize(new Dimension(WIDTH,100));	
 		
-		/* action Boutons Menu */
+		/* actions Boutons Menu Combat */
 		contenerMenu.getBoutonFightMenu().addActionListener(this::actionMenuFight);
 		contenerMenu.getBoutonRunMenu().addActionListener(this::actionMenuRun);
 		contenerMenu.getBoutonPkmMenu().addActionListener(this::actionMenuPkm);
 		boutonRetour.addActionListener(this::actionBoutonRetour);
+		/* actions Boutons Attaques */
 		contenerAttaque.getBoutonAttaque1().addActionListener(this::actionBoutonAttaque);
 		contenerAttaque.getBoutonAttaque2().addActionListener(this::actionBoutonAttaque);
 		contenerAttaque.getBoutonAttaque3().addActionListener(this::actionBoutonAttaque);
@@ -162,12 +162,11 @@ public class FenetrePokemon extends JFrame {
 			public void run() {
 				barreDeMenu.removeAll();
 				barreDeMenu.add(texteMenu);
-				texteMenu.setForeground(Color.BLACK);
 				texteMenu.setText(contenerPvAmi.getNomPk()+ " lance attaque "+ e.getActionCommand());
 				blocAdversaire.setImagePk("images/evoli2Blessure.png");
 				
 				if(e.getActionCommand().equalsIgnoreCase("fatal-foudre")) {
-					compteurNbrAtqEnnemi += 10;
+					compteurNbrAtqEnnemi += 7;
 				}
 				else if(e.getActionCommand().equalsIgnoreCase("rugissement")) {
 					texteMenu.setText("Evoli est moins rapide");
@@ -175,7 +174,7 @@ public class FenetrePokemon extends JFrame {
 				else {
 					compteurNbrAtqEnnemi ++;					
 				}
-				diminuerPv(compteurNbrAtqEnnemi,contenerPvEnnemi);
+				changementPv(compteurNbrAtqEnnemi,contenerPvEnnemi);
 				barreDeMenu.revalidate();
 				barreDeMenu.repaint();	
 				
@@ -183,21 +182,11 @@ public class FenetrePokemon extends JFrame {
 					Thread.sleep(500);
 				} catch (InterruptedException e1) {
 					e1.printStackTrace();
-				}
-				
-				//texteMenu.setText("C'est très efficace ...");
-				
+				}				
 				blocAdversaire.setImagePk("images/evoli2.png");
 				barreDeMenu.revalidate();
 				barreDeMenu.repaint();	
-				
-				try {
-					Thread.sleep(500);
-				} catch (InterruptedException e1) {
-					e1.printStackTrace();
-				}
-				barreDeMenu.removeAll();
-				
+						
 				if(! mort) {
 					attaqueAdverse();					
 				}
@@ -223,13 +212,13 @@ public class FenetrePokemon extends JFrame {
 		if(compteurNbrAtqEnnemi == 8 || compteurNbrAtqEnnemi == 30) {
 			texteMenu.setText(contenerPvEnnemi.getNomPk()+ " se régènere");
 			compteurNbrAtqEnnemi = 1;
-			diminuerPv(compteurNbrAtqEnnemi,contenerPvEnnemi);
+			changementPv(compteurNbrAtqEnnemi,contenerPvEnnemi);
 		}
 		else {
 			texteMenu.setText(contenerPvEnnemi.getNomPk()+ " lance Vive-Attaque");			
 			compteurNbrAtqAmi += 2;
 			blocAmi.setImagePk("images/pikachuBackBlessure.png");
-			diminuerPv(compteurNbrAtqAmi, contenerPvAmi);
+			changementPv(compteurNbrAtqAmi, contenerPvAmi);
 		}
 		barreDeMenu.revalidate();
 		barreDeMenu.repaint();	
@@ -239,14 +228,6 @@ public class FenetrePokemon extends JFrame {
 		} catch (InterruptedException e1) {
 			e1.printStackTrace();
 		}
-		barreDeMenu.removeAll();
-		blocAmi.setImagePk("images/pikachuBack.png");
-
-		texteMenu.setText("Que doit faire Pikachu ?");
-		barreDeMenu.add(texteMenu);
-		barreDeMenu.add(contenerMenu);
-		barreDeMenu.revalidate();
-		barreDeMenu.repaint();
 	}
 	
 	private void actionMenuRun(ActionEvent e) {
@@ -259,7 +240,7 @@ public class FenetrePokemon extends JFrame {
 	}
 	
 	
-	private void diminuerPv(int nombreAttaque,FenetrePv contenerPv) {	
+	private void changementPv(int nombreAttaque,FenetrePv contenerPv) {	
 		try {
 			contenerPv.setImgPv("images/"+listeImagePv.get(nombreAttaque)+".png");
 		} catch(IndexOutOfBoundsException e ) {
